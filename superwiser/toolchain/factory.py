@@ -1,4 +1,5 @@
 import os
+import socket
 
 from superwiser.common.log import logger
 from superwiser.toolchain.core import Orc
@@ -17,7 +18,7 @@ class OrcFactory(object):
             zk_host = os.environ.get('ZK_HOST', 'localhost')
         if zk_port is None:
             zk_port = os.environ.get('ZK_PORT', 2181)
-        orc_host = os.environ.get('ORC_HOST', '127.0.0.1')
+        orc_host = os.environ.get('ORC_HOST', socket.getfqdn())
 
         supervisor = Supervisor(conf)
         return Orc(zk_host, zk_port, supervisor, orc_host)
