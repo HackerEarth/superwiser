@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='he-superwiser-client',
-      version='0.2',
+      version='0.3',
       description='Client to run on each supervisor machine',
       url='https://github.com/farthVader91/superwiser/',
       author='Vishal Gowda',
